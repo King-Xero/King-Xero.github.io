@@ -3219,3 +3219,53 @@ input, select, textarea {
 			}
 
 	}
+  
+	.collapsible {
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
+		background-color: transparent !important;
+		border-radius: 0.35em !important;
+		border: solid 3px #efefef !important;
+		color: #787878 !important;
+		cursor: pointer;
+		display: inline-block;
+		font-weight: 400 !important;
+		height: 3.15em;
+		height: calc(2.75em + 6px);
+		min-width: 10em;
+		padding: 0 1.5em;
+		text-align: center;
+		text-decoration: none;
+		white-space: nowrap;
+		font: inherit;
+	}
+
+	.collapsible:after {
+		transition: color 0.2s ease-in-out !important;
+		color: #787878;
+		/* font-weight: bold; */
+		float: right;
+		margin-left: 5px;
+	}
+
+	.collapsible:hover {
+		border-color: #49bf9d !important;
+		color: #49bf9d !important;
+	}
+
+	.collapsible:hover:after {
+		color: #49bf9d !important;
+	}
+	  
+	.active:after {
+		content: "\2212";
+	}
+
+  /* Style the collapsible content. Note: hidden by default */
+  .aboutmecontent {
+	margin-top: 10px;
+	padding: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	background-color: #f7f7f7;
+  } 

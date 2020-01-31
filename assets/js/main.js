@@ -114,4 +114,35 @@
 
 			});
 
+	// Main Sections: Two.
+
+	// Collapsible
+	var coll = document.getElementsByClassName("collapsible");
+	var aboutMeElements = document.getElementsByClassName("aboutmecontent");
+	var i;
+
+	for (i = 0; i < coll.length; i++) {
+		coll[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if (content.style.maxHeight) {
+			content.style.maxHeight = null;
+			content.style.padding = null;
+			} else {
+			content.style.maxHeight = (content.scrollHeight + 80) + "px";
+			content.style.padding = "10px";
+			}
+			if (this.value=="Learn More") {
+				this.value = "Close";				
+				aboutMeElements[0].scrollIntoView({
+					behavior: "smooth",
+					block: "center",
+					inline: "start"
+				});
+			} else {
+				this.value = "Learn More";
+			}
+		});
+	}
+
 })(jQuery);
