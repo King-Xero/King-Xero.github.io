@@ -1,33 +1,21 @@
 /*
-	Strata by HTML5 UP
+	Telephasic by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 (function($) {
 
-	var $window = $(window),
-		$body = $('body'),
-		$header = $('#header'),
-		$footer = $('#footer'),
-		$main = $('#main'),
-		settings = {
-
-			// Parallax background effect?
-				parallax: true,
-
-			// Parallax factor (lower = more intense, higher = less intense).
-				parallaxFactor: 20
-
-		};
+	var	$window = $(window),
+		$body = $('body');
 
 	// Breakpoints.
 		breakpoints({
-			xlarge:  [ '1281px',  '1800px' ],
-			large:   [ '981px',   '1280px' ],
-			medium:  [ '737px',   '980px'  ],
-			small:   [ '481px',   '736px'  ],
-			xsmall:  [ null,      '480px'  ],
+			normal:    [ '1081px',  '1280px'  ],
+			narrow:    [ '821px',   '1080px'  ],
+			narrower:  [ '737px',   '820px'   ],
+			mobile:    [ '481px',   '736px'   ],
+			mobilep:   [ null,      '480px'   ]
 		});
 
 	// Play initial animations on page load.
@@ -37,112 +25,42 @@
 			}, 100);
 		});
 
-	// Touch?
-		if (browser.mobile) {
-
-			// Turn on touch mode.
-				$body.addClass('is-touch');
-
-			// Height fix (mostly for iOS).
-				window.setTimeout(function() {
-					$window.scrollTop($window.scrollTop() + 1);
-				}, 0);
-
-		}
-
-	// Footer.
-		breakpoints.on('<=medium', function() {
-			$footer.insertAfter($main);
+	// Dropdowns.
+		$('#nav > ul').dropotron({
+			mode: 'fade',
+			speed: 300,
+			alignment: 'center',
+			noOpenerFade: true
 		});
 
-		breakpoints.on('>medium', function() {
-			$footer.appendTo($header);
-		});
+	// Nav.
 
-	// Header.
+		// Buton.
+			$(
+				'<div id="navButton">' +
+					'<a href="#navPanel" class="toggle"></a>' +
+				'</div>'
+			)
+				.appendTo($body);
 
-		// Parallax background.
-
-			// Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
-				if (browser.name == 'ie'
-				||	browser.mobile)
-					settings.parallax = false;
-
-			if (settings.parallax) {
-
-				breakpoints.on('<=medium', function() {
-
-					$window.off('scroll.strata_parallax');
-					$header.css('background-position', '');
-
+		// Panel.
+			$(
+				'<div id="navPanel">' +
+					'<nav>' +
+						'<a href="index.html" class="link depth-0">Home</a>' +
+						$('#nav').navList() +
+					'</nav>' +
+				'</div>'
+			)
+				.appendTo($body)
+				.panel({
+					delay: 500,
+					hideOnClick: true,
+					resetScroll: true,
+					resetForms: true,
+					side: 'top',
+					target: $body,
+					visibleClass: 'navPanel-visible'
 				});
-
-				breakpoints.on('>medium', function() {
-
-					$header.css('background-position', 'left 0px');
-
-					$window.on('scroll.strata_parallax', function() {
-						$header.css('background-position', 'left ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
-					});
-
-				});
-
-				$window.on('load', function() {
-					$window.triggerHandler('scroll');
-				});
-
-			}
-
-	// Main Sections: Two.
-
-		// Lightbox gallery.
-			$window.on('load', function() {
-
-				$('#two').poptrox({
-					caption: function($a) { return $a.next('h3').text(); },
-					overlayColor: '#2c2c2c',
-					overlayOpacity: 0.85,
-					popupCloserText: '',
-					popupLoaderText: '',
-					selector: '.work-item a.image',
-					usePopupCaption: true,
-					usePopupDefaultStyling: false,
-					usePopupEasyClose: false,
-					usePopupNav: true,
-					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
-				});
-
-			});
-
-	// Main Sections: Two.
-
-	// Collapsible
-	var coll = document.getElementsByClassName("collapsible");
-	var aboutMeElements = document.getElementsByClassName("aboutmecontent");
-	var i;
-
-	for (i = 0; i < coll.length; i++) {
-		coll[i].addEventListener("click", function() {
-			this.classList.toggle("active");
-			var content = this.nextElementSibling;
-			if (content.style.maxHeight) {
-			content.style.maxHeight = null;
-			content.style.padding = null;
-			} else {
-			content.style.maxHeight = (content.scrollHeight + 80) + "px";
-			content.style.padding = "10px";
-			}
-			if (this.value=="Learn More") {
-				this.value = "Close";				
-				aboutMeElements[0].scrollIntoView({
-					behavior: "smooth",
-					block: "center",
-					inline: "start"
-				});
-			} else {
-				this.value = "Learn More";
-			}
-		});
-	}
 
 })(jQuery);
