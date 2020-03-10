@@ -1,7 +1,17 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Toyan Green - Portfolio</title>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160243663-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-160243663-1');
+		</script>
+
+		<title>Toyan Green</title>
 		<link rel="shortcuticon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
@@ -23,24 +33,24 @@
 							<nav id="nav">
 								<ul>
 									<li>
-										<a href="#">Portfolio</a>
+										<a href="portfolio.html">Portfolio</a>
 										<ul>
 											<li>
-												<a href="#">Impossible Rescue</a>
+												<a href="impossible-rescue.html">Impossible Rescue</a>
+												<ul>
+													<li><a href="https://github.com/King-Xero/ImpossibleRescue" target="_blank">Code</a></li>
+													<li><a href="https://drive.google.com/open?id=1fUhpNCXA-GPNHENtkok3PveHw8dyuWJH">Video</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="meteor-madness.html">Meteor Madness</a>
 												<ul>
 													<li><a href="#">Code</a></li>
 													<li><a href="#">Video</a></li>
 												</ul>
 											</li>
 											<li>
-												<a href="#">Meteor Madness</a>
-												<ul>
-													<li><a href="#">Code</a></li>
-													<li><a href="#">Video</a></li>
-												</ul>
-											</li>
-											<li>
-												<a href="#">Garden Defenders</a>
+												<a href="garden-defenders.html">Garden Defenders</a>
 												<ul>
 													<li><a href="#">Code</a></li>
 													<li><a href="#">Video</a></li>
@@ -80,32 +90,30 @@
 						<div class="row">
 							<section class="col-6 col-12-narrower feature">
 								<div class="image-wrapper first">
-									<a href="#" class="image featured first"><img src="images/pic01.jpg" alt="" /></a>
+									<a href="impossible-rescue.html" class="image featured first"><img src="images/pic01.jpg" alt="" /></a>
 								</div>
 								<header>
-									<h2>Semper magna neque vel<br />
-									adipiscing curabitur</h2>
+									<h2>Impossible Rescue</h2>
 								</header>
 								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel
 								sem sit dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et sed
 								adipiscing elit. Curabitur vel sem sit.</p>
 								<ul class="actions">
-									<li><a href="#" class="button">Elevate my awareness</a></li>
+									<li><a href="impossible-rescue.html" class="button">Take a look</a></li>
 								</ul>
 							</section>
 							<section class="col-6 col-12-narrower feature">
 								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+									<a href="garden-defenders.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
 								</div>
 								<header>
-									<h2>Amet lorem ipsum dolor<br />
-									sit consequat magna</h2>
+									<h2>Garden Defenders</h2>
 								</header>
 								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel
 								sem sit dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et sed
 								adipiscing elit. Curabitur vel sem sit.</p>
 								<ul class="actions">
-									<li><a href="#" class="button">Elevate my awareness</a></li>
+									<li><a href="garden-defenders.html" class="button">Take a look</a></li>
 								</ul>
 							</section>
 						</div>
@@ -120,42 +128,6 @@
 					</section>
 				</div>
 
-			<!-- Features 2 -->
-				<div class="wrapper">
-					<section class="container">
-						<header class="major">
-							<h2>Sed magna consequat lorem curabitur tempus</h2>
-							<p>Elit aliquam vulputate egestas euismod nunc semper vehicula lorem blandit</p>
-						</header>
-						<div class="row features">
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper first">
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-								vel sem sit dolor neque semper magna lorem ipsum.</p>
-							</section>
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-								vel sem sit dolor neque semper magna lorem ipsum.</p>
-							</section>
-							<section class="col-4 col-12-narrower feature">
-								<div class="image-wrapper">
-									<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
-								vel sem sit dolor neque semper magna lorem ipsum.</p>
-							</section>
-						</div>
-						<ul class="actions major">
-							<li><a href="#" class="button">Elevate my awareness</a></li>
-						</ul>
-					</section>
-				</div>
-
 			<!-- Footer -->
 				<div id="footer-wrapper">
 					<div id="footer" class="container">
@@ -165,7 +137,7 @@
 						</header>
 						<div class="row">
 							<section class="col-6 col-12-narrower">
-								<form method="post" action="#">
+								<form method="post" action="https://formspree.io/toyangreen@gmail.com">
 									<div class="row gtr-50">
 										<div class="col-6 col-12-mobile">
 											<input name="name" placeholder="Name" type="text" />
@@ -176,6 +148,7 @@
 										<div class="col-12">
 											<textarea name="message" placeholder="Message"></textarea>
 										</div>
+										<input type="hidden" name="_subject" value="Just checked out your portfolio"/>
 										<div class="col-12">
 											<ul class="actions">
 												<li><input type="submit" value="Send Message" /></li>

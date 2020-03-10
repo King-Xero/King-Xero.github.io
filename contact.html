@@ -1,6 +1,16 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160243663-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-160243663-1');
+		</script>
+
 		<title>Toyan Green - Portfolio</title>
 		<link rel="shortcuticon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
@@ -23,24 +33,24 @@
 							<nav id="nav">
 								<ul>
 									<li>
-										<a href="#">Portfolio</a>
+										<a href="portfolio.html">Portfolio</a>
 										<ul>
 											<li>
-												<a href="#">Impossible Rescue</a>
+												<a href="impossible-rescue.html">Impossible Rescue</a>
+												<ul>
+													<li><a href="https://github.com/King-Xero/ImpossibleRescue" target="_blank">Code</a></li>
+													<li><a href="https://drive.google.com/open?id=1fUhpNCXA-GPNHENtkok3PveHw8dyuWJH">Video</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="meteor-madness.html">Meteor Madness</a>
 												<ul>
 													<li><a href="#">Code</a></li>
 													<li><a href="#">Video</a></li>
 												</ul>
 											</li>
 											<li>
-												<a href="#">Meteor Madness</a>
-												<ul>
-													<li><a href="#">Code</a></li>
-													<li><a href="#">Video</a></li>
-												</ul>
-											</li>
-											<li>
-												<a href="#">Garden Defenders</a>
+												<a href="garden-defenders.html">Garden Defenders</a>
 												<ul>
 													<li><a href="#">Code</a></li>
 													<li><a href="#">Video</a></li>
@@ -54,7 +64,8 @@
 								</ul>
 							</nav>
 					</div>
-					
+				</div>
+
 			<!-- Footer -->
 				<div id="footer-wrapper">
 					<div id="footer" class="container">
@@ -64,7 +75,7 @@
 						</header>
 						<div class="row">
 							<section class="col-6 col-12-narrower">
-								<form method="post" action="#">
+								<form method="post" action="https://formspree.io/toyangreen@gmail.com">
 									<div class="row gtr-50">
 										<div class="col-6 col-12-mobile">
 											<input name="name" placeholder="Name" type="text" />
@@ -75,6 +86,7 @@
 										<div class="col-12">
 											<textarea name="message" placeholder="Message"></textarea>
 										</div>
+										<input type="hidden" name="_subject" value="Just checked out your portfolio"/>
 										<div class="col-12">
 											<ul class="actions">
 												<li><input type="submit" value="Send Message" /></li>
